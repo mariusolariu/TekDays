@@ -15,4 +15,15 @@ class TekEvent {
   String toString() {
     return [name, city].join(", ")
   }
+
+  // the order of constraints here will determine the order in the view for columns
+  static constraints = {
+    name()
+    city()
+    description maxSize : 5000
+    organizer()
+    venue()
+    startDate()
+    endDate()
+  }
 }
