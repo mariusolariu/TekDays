@@ -11,6 +11,15 @@ class TekEvent {
   Date endDate
   String description
 
+  static hasMany = [
+      volunteers: TekUser,
+      respondentsEmails: String,
+      sponsors: Sponsor,
+      sponsorships: Sponsorship,
+      tasks: Task,
+      messages: TekMessage
+  ]
+
   @Override
   String toString() {
     return [name, city].join(", ")
@@ -25,5 +34,9 @@ class TekEvent {
     venue()
     startDate()
     endDate()
+    sponsors nullable : true
+    sponsorships nullable : true
+    tasks: nullable : true
+    messages: nullable : true
   }
 }

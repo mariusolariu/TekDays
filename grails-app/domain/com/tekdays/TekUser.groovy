@@ -16,10 +16,10 @@ class TekUser {
 
   static constraints = {
     firstName()
-    lastName()
-    email()
-    website()
-    bio maxSize:5000
+    lastName(nullable: true)
+    email(nullable: true)
+    website(nullable: true)
+    bio(maxSize:5000, nullable:true)
   }
 
 }
