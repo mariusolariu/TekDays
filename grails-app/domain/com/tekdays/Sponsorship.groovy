@@ -20,8 +20,8 @@ class Sponsorship {
     @Override
     public String toString() {
         return "Sponsorship{" +
-            "event=" + event.name +
-            ", sponsor=" + sponsor.name +
+            "event=" + event?.name +
+            ", sponsor=" + sponsor?.name +
             ", contributionType='" + contributionType + '\'' +
             '}';
     }

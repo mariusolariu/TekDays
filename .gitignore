@@ -6,3 +6,4 @@ target
 classes
 wrapper
 *.iml
+.slcache*
