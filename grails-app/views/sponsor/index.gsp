@@ -30,7 +30,8 @@
 					
 						<g:sortableColumn property="description" title="${message(code: 'sponsor.description.label', default: 'Description')}" />
 					
-
+						<g:sortableColumn property="logo" title="${message(code: 'sponsor.logo.label', default: 'Logo')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
