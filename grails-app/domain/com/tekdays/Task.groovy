@@ -15,4 +15,9 @@ class Task {
         assignedTo nullable: true
         dueDate nullable: true
     }
+
+    @Override
+    public String toString() {
+        return "Task: $title"
+    }
 }

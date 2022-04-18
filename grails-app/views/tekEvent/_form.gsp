@@ -1,5 +1,6 @@
 <%@ page import="com.tekdays.TekEvent" %>
-
+<!-- jsp import directive: Import statement similar to java import-->
+<%@ page import="com.tekdays.TekUser" %>
 
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'name', 'error')} required">
@@ -34,7 +35,7 @@
 		<g:message code="tekEvent.organizer.label" default="Organizer" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="organizer" name="organizer.id" from="${com.tekdays.TekUser.list()}" optionKey="id" required="" value="${tekEventInstance?.organizer?.id}" class="many-to-one"/>
+	<g:select id="organizer" name="organizer.id" from="${TekUser.list()}" optionKey="id" required="" value="${tekEventInstance?.organizer?.id}" class="many-to-one"/>
 
 </div>
 
@@ -52,7 +53,7 @@
 		<g:message code="tekEvent.startDate.label" default="Start Date" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="startDate" precision="day"  value="${tekEventInstance?.startDate}"  />
+	<g:datePicker name="startDate" precision="day"  value="${tekEventInstance?.startDate}" years="${2022..2032}"/>
 
 </div>
 
@@ -61,7 +62,7 @@
 		<g:message code="tekEvent.endDate.label" default="End Date" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="endDate" precision="day"  value="${tekEventInstance?.endDate}"  />
+	<g:datePicker name="endDate" precision="day"  value="${tekEventInstance?.endDate}" years="${2022..2032}"  />
 
 </div>
 
@@ -70,7 +71,7 @@
 		<g:message code="tekEvent.sponsors.label" default="Sponsors" />
 		
 	</label>
-	<g:select name="sponsors" from="${com.tekdays.Sponsor.list()}" multiple="multiple" optionKey="id" size="5" value="${tekEventInstance?.sponsors*.id}" class="many-to-many"/>
+	<g:select name="sponsors" from="${com.tekdays.Sponsor.list()}" optionKey="${tekEventInstance.id}"  value="" class="many-to-many" noSelection="${['':'Select One...']}"/>
 
 </div>
 
@@ -142,7 +143,7 @@
 		<g:message code="tekEvent.volunteers.label" default="Volunteers" />
 		
 	</label>
-	<g:select name="volunteers" from="${com.tekdays.TekUser.list()}" multiple="multiple" optionKey="id" size="5" value="${tekEventInstance?.volunteers*.id}" class="many-to-many"/>
+	<g:select name="volunteers" from="${TekUser.list()}" noSelection="${['':'select one']}" optionKey="id" value="" class="many-to-many"/>
 
 </div>
 

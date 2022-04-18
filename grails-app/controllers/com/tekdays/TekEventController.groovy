@@ -2,19 +2,21 @@ package com.tekdays
 
 import grails.converters.JSON
 import grails.converters.XML
+import tekdays.TaskService
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class TekEventController {
+    TaskService taskService
 
     //the save, update, delete are allowed to work only with the defined HTTP requestsc
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     // max is a query string parameter e.g. http://localhost:8080/tekEvent?max=20
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+        params.max = Math.min(max ?: 50, 100)
         respond TekEvent.list(params), model:[tekEventInstanceCount: TekEvent.count()]
     }
 
@@ -43,6 +45,7 @@ class TekEventController {
         }
 
         tekEventInstance.save flush:true
+        taskService.addDefaultTasks(tekEventInstance)
 
         request.withFormat {
             form multipartForm {

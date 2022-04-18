@@ -21,4 +21,9 @@ class Sponsor {
         logo nullable : true, maxSize : 4000000
         sponsorships nullable : true
     }
+
+    @Override
+    String toString() {
+        return name
+    }
 }
