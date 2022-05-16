@@ -31,7 +31,7 @@ class BootStrap {
                 startDate: new Date('02/04/2022'),
                 endDate: new Date('08/04/2022'),
                 description: '''
-                 The coolest event igpln the country
+                 The coolest event in the country
             ''')
 
             if (!event.save()) throw new RuntimeException('Could not save event')

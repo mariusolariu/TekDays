@@ -11,7 +11,7 @@ class Task {
 
     static constraints = {
         title blank : false
-        notes blank : true, nullable: true, maxSize: 5000
+        notes blank : true, nullable: true, maxSize: 60
         assignedTo nullable: true
         dueDate nullable: true
     }

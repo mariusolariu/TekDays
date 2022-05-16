@@ -131,6 +131,15 @@
 					
 				</li>
 				</g:if>
+				<g:if test="${tekEventInstance?.messages}">
+					<li class="fieldcontain">
+						<span id="messages-label" class="property-label"><g:message code="tekEvent.messages.label" default="Messages" /></span>
+
+						<span class="property-value" aria-labelby="messages-label">
+							<g:link controller="tekMessage" action="index" id="${tekEventInstance.id}">View Messages</g:link>
+						</span>
+					</li>
+				</g:if>
 			
 			</ol>
 			<g:form url="[resource:tekEventInstance, action:'delete']" method="DELETE">
@@ -139,6 +148,7 @@
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
+
 		</div>
 	</body>
 </html>

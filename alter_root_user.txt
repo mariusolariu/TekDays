@@ -1,0 +1,2 @@
+UNINSTALL PLUGIN validate_password;
+SET PASSWORD FOR root@localhost = PASSWORD('');

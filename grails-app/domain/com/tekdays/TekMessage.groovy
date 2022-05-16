@@ -10,5 +10,6 @@ class TekMessage {
     static belongsTo = TekEvent
 
     static constraints = {
+        parent nullable: true
     }
 }

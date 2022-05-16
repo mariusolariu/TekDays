@@ -16,7 +16,7 @@
 		<g:message code="task.notes.label" default="Notes" />
 		
 	</label>
-	<g:textArea name="notes" cols="40" rows="5" maxlength="5000" value="${taskInstance?.notes}"/>
+	<g:textArea name="notes" cols="40" rows="5" maxlength="10" value="${taskInstance?.notes}"/>
 
 </div>
 

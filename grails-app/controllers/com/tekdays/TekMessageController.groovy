@@ -12,7 +12,21 @@ class TekMessageController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond TekMessage.list(params), model:[tekMessageInstanceCount: TekMessage.count()]
+
+        def list
+        def count
+        def event = TekEvent.get(params.id)
+        if (event) {
+            list = TekMessage.findAllByEvent(event)
+            count = TekMessage.countByEvent(event)
+        } else {
+            list = TekMessage.list(params)
+            count = TekMessage.count()
+        }
+
+        [tekMessageInstanceList: list,
+         tekMessageInstanceCount: count,
+         event: event]
     }
 
     def show(TekMessage tekMessageInstance) {

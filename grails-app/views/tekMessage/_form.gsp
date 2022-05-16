@@ -29,7 +29,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: tekMessageInstance, field: 'parent', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: tekMessageInstance, field: 'parent', 'error')}">
 	<label for="parent">
 		<g:message code="tekMessage.parent.label" default="Parent" />
 		<span class="required-indicator">*</span>
