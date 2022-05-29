@@ -71,7 +71,7 @@
 		<g:message code="tekEvent.sponsors.label" default="Sponsors" />
 		
 	</label>
-	<g:select name="sponsors" from="${com.tekdays.Sponsor.list()}" optionKey="${tekEventInstance.id}"  value="" class="many-to-many" noSelection="${['':'Select One...']}"/>
+	<g:select name="sponsors" from="${com.tekdays.Sponsor.list()}" optionKey="id"  value="" class="many-to-many" noSelection="${['':'Select One...']}"/>
 
 </div>
 
