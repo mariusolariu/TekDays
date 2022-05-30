@@ -12,4 +12,9 @@ class TekMessage {
     static constraints = {
         parent nullable: true
     }
+
+    @Override
+    String toString() {
+        "$author: $subject"
+    }
 }

@@ -32,9 +32,8 @@
 <div class="fieldcontain ${hasErrors(bean: tekMessageInstance, field: 'parent', 'error')}">
 	<label for="parent">
 		<g:message code="tekMessage.parent.label" default="Parent" />
-		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="parent" name="parent.id" from="${com.tekdays.TekMessage.list()}" optionKey="id" required="" value="${tekMessageInstance?.parent?.id}" class="many-to-one"/>
+	<g:select id="parent" name="parent.id" from="${com.tekdays.TekMessage.list()}" optionKey="id" noSelection="['': '']"  value="${tekMessageInstance?.parent?.id}" class="many-to-one"/>
 
 </div>
 

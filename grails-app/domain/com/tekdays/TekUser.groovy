@@ -11,7 +11,7 @@ class TekUser {
 
   @Override
   String toString() {
-     "${firstName}"
+     "$firstName $lastName"
   }
 
   static constraints = {

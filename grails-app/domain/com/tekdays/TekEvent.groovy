@@ -27,7 +27,7 @@ class TekEvent {
 
   // the order of constraints here will determine the order in the view for columns
   static constraints = {
-    name()
+    name unique: ['city', 'venue']
     city()
     description maxSize : 5000
     organizer()
